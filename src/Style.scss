@@ -1,0 +1,68 @@
+:root {
+  --dark-color: rgb(36, 25, 56);
+  --mid-color: rgb(185, 30, 177);
+  --light-color: rgb(46, 222, 33);
+}
+::selection {
+  background-color: rgb(131, 58, 180, 0);
+}
+body {
+  display: flex;
+  align-items: center;
+  min-height: 100vh;
+  justify-content: center;
+  font-size: 100px;
+  background-color: var(--dark-color);
+  background: linear-gradient(
+    to bottom,
+    var(--dark-color),
+    rgb(36, 25, 59),
+    rgb(36, 25, 69),
+    rgb(36, 25, 76),
+    rgb(36, 25, 69),
+    rgb(36, 25, 56)
+  );
+  background-size: 100% 600%;
+  animation: gradient 20s ease infinite;
+}
+
+.mainContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 30px;
+  color: var(--light-color);
+  .content {
+    margin: 0;
+    background: rgb(131, 58, 180);
+    background: linear-gradient(
+      90deg,
+      rgba(131, 58, 180, 1) 0%,
+      rgba(253, 29, 29, 1) 50%,
+      rgba(252, 176, 69, 1) 100%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .rightBtn:hover,
+  .leftBtn:hover {
+    color: var(--mid-color);
+    transition: 100ms ease-in;
+  }
+
+  .rightBtn:target,
+  .leftBtn:target {
+    font-size: 300px;
+  }
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 0 -600%;
+  }
+}
